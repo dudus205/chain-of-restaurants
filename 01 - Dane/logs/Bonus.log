@@ -1,0 +1,56 @@
+
+SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 6 16:00:55 2023
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+
+Control File:   Bonus.ctl
+Data File:      ../csv/Bonus.csv
+  File processing option string: "str '\r\n'"
+  Bad File:     ../bads/Bonus.log
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table BONUS, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+ID                                  FIRST     *   ;  O(") CHARACTER            
+                                                      O(")
+NAME                                 NEXT   255   ;  O(") CHARACTER            
+                                                      O(")
+DISCOUNT                             NEXT     *   ;  O(") CHARACTER            
+                                                      O(")
+
+
+Table BONUS:
+  5 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 193500 bytes(250 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:             5
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Jan 06 16:00:55 2023
+Run ended on Fri Jan 06 16:00:56 2023
+
+Elapsed time was:     00:00:00.18
+CPU time was:         00:00:00.10

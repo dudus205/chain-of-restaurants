@@ -1,0 +1,58 @@
+
+SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 6 16:00:58 2023
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+
+Control File:   Client.ctl
+Data File:      ../csv/Client.csv
+  File processing option string: "str '\r\n'"
+  Bad File:     ../bads/Client.log
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     250 rows, maximum of 1048576 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table CLIENT, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+ID                                  FIRST     *   ;  O(") CHARACTER            
+                                                      O(")
+GENDER                               NEXT     1   ;  O(") CHARACTER            
+                                                      O(")
+TYPE                                 NEXT    50   ;  O(") CHARACTER            
+                                                      O(")
+AGE                                  NEXT     *   ;  O(") CHARACTER            
+                                                      O(")
+
+
+Table CLIENT:
+  100000 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 143000 bytes(250 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:        100000
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Fri Jan 06 16:00:58 2023
+Run ended on Fri Jan 06 16:01:00 2023
+
+Elapsed time was:     00:00:01.78
+CPU time was:         00:00:00.20
