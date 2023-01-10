@@ -2,7 +2,7 @@ load data
 infile '../csv/Product.csv' "str '\r\n'"
 append
 into table PRODUCT
-fields terminated by ';'
+fields terminated by ','
 OPTIONALLY ENCLOSED BY '"' AND '"'
 trailing nullcols
            ( ID,

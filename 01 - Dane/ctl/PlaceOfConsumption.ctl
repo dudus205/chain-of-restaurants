@@ -2,7 +2,7 @@ load data
 infile '../csv/PlaceOfConsumption.csv' "str '\r\n'"
 append
 into table PLACE_OF_CONSUMPTION
-fields terminated by ';'
+fields terminated by ','
 OPTIONALLY ENCLOSED BY '"' AND '"'
 trailing nullcols
            ( ID,

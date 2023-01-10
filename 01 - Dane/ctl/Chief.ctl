@@ -2,7 +2,7 @@ load data
 infile '../csv/Chief.csv' "str '\r\n'"
 append
 into table CHIEF
-fields terminated by ';'
+fields terminated by ','
 OPTIONALLY ENCLOSED BY '"' AND '"'
 trailing nullcols
            ( ID,

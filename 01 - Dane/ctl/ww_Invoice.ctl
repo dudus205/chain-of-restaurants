@@ -2,7 +2,7 @@ load data
 infile '../csv/Invoice.csv' "str '\r\n'"
 append
 into table INVOICE
-fields terminated by ';'
+fields terminated by ','
 OPTIONALLY ENCLOSED BY '"' AND '"'
 trailing nullcols
            ( ID,

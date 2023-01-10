@@ -1,9 +1,8 @@
 
-SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 6 16:01:04 2023
+SQL*Loader: Release 19.0.0.0.0 - Production on Tue Jan 10 18:44:05 2023
 Version 19.3.0.0.0
 
 Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
-
 
 Control File:   Payment.ctl
 Data File:      ../csv/Payment.csv
@@ -26,13 +25,13 @@ TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID                                  FIRST     *   ;  O(") CHARACTER            
+ID                                  FIRST     *   ,  O(") CHARACTER            
                                                       O(")
-BILL_NUMBER                          NEXT     *   ;  O(") CHARACTER            
+BILL_NUMBER                          NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-METHOD                               NEXT   255   ;  O(") CHARACTER            
+METHOD                               NEXT   255   ,  O(") CHARACTER            
                                                       O(")
-TIP                                  NEXT     *   ;  O(") CHARACTER            
+TIP                                  NEXT     *   ,  O(") CHARACTER            
                                                       O(")
 
 
@@ -51,8 +50,8 @@ Total logical records read:        100000
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Fri Jan 06 16:01:04 2023
-Run ended on Fri Jan 06 16:01:05 2023
+Run began on Tue Jan 10 18:44:05 2023
+Run ended on Tue Jan 10 18:44:07 2023
 
-Elapsed time was:     00:00:01.76
+Elapsed time was:     00:00:02.28
 CPU time was:         00:00:00.22

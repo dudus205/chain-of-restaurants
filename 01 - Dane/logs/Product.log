@@ -1,9 +1,8 @@
 
-SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 6 16:01:08 2023
+SQL*Loader: Release 19.0.0.0.0 - Production on Tue Jan 10 18:44:12 2023
 Version 19.3.0.0.0
 
 Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
-
 
 Control File:   Product.ctl
 Data File:      ../csv/Product.csv
@@ -26,11 +25,11 @@ TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID                                  FIRST     *   ;  O(") CHARACTER            
+ID                                  FIRST     *   ,  O(") CHARACTER            
                                                       O(")
-NAME                                 NEXT   255   ;  O(") CHARACTER            
+NAME                                 NEXT   255   ,  O(") CHARACTER            
                                                       O(")
-CATEGORY                             NEXT   255   ;  O(") CHARACTER            
+CATEGORY                             NEXT   255   ,  O(") CHARACTER            
                                                       O(")
 
 
@@ -49,8 +48,8 @@ Total logical records read:            22
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Fri Jan 06 16:01:08 2023
-Run ended on Fri Jan 06 16:01:08 2023
+Run began on Tue Jan 10 18:44:12 2023
+Run ended on Tue Jan 10 18:44:13 2023
 
 Elapsed time was:     00:00:00.20
-CPU time was:         00:00:00.12
+CPU time was:         00:00:00.06

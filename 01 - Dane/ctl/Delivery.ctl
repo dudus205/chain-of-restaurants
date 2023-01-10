@@ -2,7 +2,7 @@ load data
 infile '../csv/Delivery.csv' "str '\r\n'"
 append
 into table DELIVERY
-fields terminated by ';'
+fields terminated by ','
 OPTIONALLY ENCLOSED BY '"' AND '"'
 trailing nullcols
            ( ID,

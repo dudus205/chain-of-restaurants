@@ -1,9 +1,8 @@
 
-SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 6 16:01:11 2023
+SQL*Loader: Release 19.0.0.0.0 - Production on Tue Jan 10 18:44:15 2023
 Version 19.3.0.0.0
 
 Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
-
 
 Control File:   ww_Invoice.ctl
 Data File:      ../csv/Invoice.csv
@@ -26,170 +25,50 @@ TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID                                  FIRST     *   ;  O(") CHARACTER            
+ID                                  FIRST     *   ,  O(") CHARACTER            
                                                       O(")
-BISTRO_ID                            NEXT     *   ;  O(") CHARACTER            
+BISTRO_ID                            NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-POC_ID                               NEXT     *   ;  O(") CHARACTER            
+POC_ID                               NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-PRODUCT_ID                           NEXT     *   ;  O(") CHARACTER            
+PRODUCT_ID                           NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-MENU_ID                              NEXT     *   ;  O(") CHARACTER            
+MENU_ID                              NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-CHIEF_ID                             NEXT     *   ;  O(") CHARACTER            
+CHIEF_ID                             NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-PAYMENT_ID                           NEXT     *   ;  O(") CHARACTER            
+PAYMENT_ID                           NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-WORKER_ID                            NEXT     *   ;  O(") CHARACTER            
+WORKER_ID                            NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-DELIVERY_ID                          NEXT     *   ;  O(") CHARACTER            
+DELIVERY_ID                          NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-BONUS_ID                             NEXT     *   ;  O(") CHARACTER            
+BONUS_ID                             NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-CLIENT_ID                            NEXT     *   ;  O(") CHARACTER            
+CLIENT_ID                            NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-QUANTITY                             NEXT     *   ;  O(") CHARACTER            
+QUANTITY                             NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-PRICE_VALUE                          NEXT     *   ;  O(") CHARACTER            
+PRICE_VALUE                          NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-CLIENT_RATING                        NEXT     *   ;  O(") CHARACTER            
+CLIENT_RATING                        NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-HOUR                                 NEXT     *   ;  O(") CHARACTER            
+HOUR                                 NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-DAY                                  NEXT     *   ;  O(") CHARACTER            
+DAY                                  NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-WEEKDAY                              NEXT     *   ;  O(") CHARACTER            
+WEEKDAY                              NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-MONTH                                NEXT     *   ;  O(") CHARACTER            
+MONTH                                NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-YEAR                                 NEXT     *   ;  O(") CHARACTER            
+YEAR                                 NEXT     *   ,  O(") CHARACTER            
                                                       O(")
 
 value used for ROWS parameter changed from 250 to 213
-Record 2022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 12022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20220: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20221: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20222: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20223: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20224: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20225: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20226: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20227: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20228: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 20229: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 22022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 32022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 42022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 52022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 62022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 72022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 82022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 92022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 102022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 112022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120220: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120221: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120222: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120223: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120224: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120225: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120226: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120227: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120228: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 120229: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 122022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 132022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 142022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 152022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 162022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 172022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 182022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
-Record 192022: Rejected - Error on table INVOICE.
-ORA-00001: unique constraint (PROJEKT.SYS_C008521) violated
-
 
 Table INVOICE:
-  199948 Rows successfully loaded.
-  40 Rows not loaded due to data errors.
+  300000 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
 
@@ -198,12 +77,12 @@ Space allocated for bind array:                1044126 bytes(213 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          1
-Total logical records read:        199988
-Total logical records rejected:        40
+Total logical records read:        300000
+Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Fri Jan 06 16:01:11 2023
-Run ended on Fri Jan 06 16:01:17 2023
+Run began on Tue Jan 10 18:44:15 2023
+Run ended on Tue Jan 10 18:44:37 2023
 
-Elapsed time was:     00:00:05.62
-CPU time was:         00:00:01.03
+Elapsed time was:     00:00:16.08
+CPU time was:         00:00:01.95

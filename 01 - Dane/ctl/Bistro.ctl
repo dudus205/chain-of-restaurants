@@ -2,7 +2,7 @@ load data
 infile '../csv/Bistro.csv' "str '\r\n'"
 append
 into table BISTRO
-fields terminated by ';'
+fields terminated by ','
 OPTIONALLY ENCLOSED BY '"' AND '"'
 trailing nullcols
            ( ID,

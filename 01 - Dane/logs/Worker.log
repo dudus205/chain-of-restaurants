@@ -1,9 +1,8 @@
 
-SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 6 16:01:09 2023
+SQL*Loader: Release 19.0.0.0.0 - Production on Tue Jan 10 18:44:14 2023
 Version 19.3.0.0.0
 
 Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
-
 
 Control File:   Worker.ctl
 Data File:      ../csv/Worker.csv
@@ -26,18 +25,18 @@ TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID                                  FIRST     *   ;  O(") CHARACTER            
+ID                                  FIRST     *   ,  O(") CHARACTER            
                                                       O(")
-NAME                                 NEXT   255   ;  O(") CHARACTER            
+NAME                                 NEXT   255   ,  O(") CHARACTER            
                                                       O(")
-SURNAME                              NEXT   255   ;  O(") CHARACTER            
+SURNAME                              NEXT   255   ,  O(") CHARACTER            
                                                       O(")
-SENIORITY                            NEXT     *   ;  O(") CHARACTER            
+SENIORITY                            NEXT     *   ,  O(") CHARACTER            
                                                       O(")
 
 
 Table WORKER:
-  100 Rows successfully loaded.
+  1000 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
@@ -47,12 +46,12 @@ Space allocated for bind array:                 258000 bytes(250 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          1
-Total logical records read:           100
+Total logical records read:          1000
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Fri Jan 06 16:01:09 2023
-Run ended on Fri Jan 06 16:01:10 2023
+Run began on Tue Jan 10 18:44:14 2023
+Run ended on Tue Jan 10 18:44:14 2023
 
-Elapsed time was:     00:00:00.25
-CPU time was:         00:00:00.14
+Elapsed time was:     00:00:00.22
+CPU time was:         00:00:00.08

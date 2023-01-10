@@ -1,6 +1,5 @@
-ID;NAME;TYPE
-"1";"Teges Weges";"Vegetarian"
-"2";"For Beetroots";"Normal"
-"3";"For Potatos";"Breakfast"
-"4";"For Insta";"Vegetarian"
-"5";"Italiano";"Normal"
+ID,NAME,TYPE
+1,Kids,Dla dzieci
+2,Normalne,Zwyczajne
+3,Premium,Premium
+4,Vegan,Wegańskie

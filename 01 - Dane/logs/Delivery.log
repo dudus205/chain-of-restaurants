@@ -1,9 +1,8 @@
 
-SQL*Loader: Release 19.0.0.0.0 - Production on Fri Jan 6 16:01:00 2023
+SQL*Loader: Release 19.0.0.0.0 - Production on Tue Jan 10 18:44:00 2023
 Version 19.3.0.0.0
 
 Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
-
 
 Control File:   Delivery.ctl
 Data File:      ../csv/Delivery.csv
@@ -26,22 +25,22 @@ TRAILING NULLCOLS option in effect
 
    Column Name                  Position   Len  Term Encl Datatype
 ------------------------------ ---------- ----- ---- ---- ---------------------
-ID                                  FIRST     *   ;  O(") CHARACTER            
+ID                                  FIRST     *   ,  O(") CHARACTER            
                                                       O(")
-DG_NAME                              NEXT   255   ;  O(") CHARACTER            
+DG_NAME                              NEXT   255   ,  O(") CHARACTER            
                                                       O(")
-DG_SURNAME                           NEXT   255   ;  O(") CHARACTER            
+DG_SURNAME                           NEXT   255   ,  O(") CHARACTER            
                                                       O(")
-DG_SENIORITY                         NEXT     *   ;  O(") CHARACTER            
+DG_SENIORITY                         NEXT     *   ,  O(") CHARACTER            
                                                       O(")
-TRANSPORT                            NEXT   255   ;  O(") CHARACTER            
+TRANSPORT                            NEXT   255   ,  O(") CHARACTER            
                                                       O(")
-DELIVERY_TIME_IN_MIN                 NEXT     *   ;  O(") CHARACTER            
+DELIVERY_TIME_IN_MIN                 NEXT     *   ,  O(") CHARACTER            
                                                       O(")
 
 
 Table DELIVERY:
-  100000 Rows successfully loaded.
+  120000 Rows successfully loaded.
   0 Rows not loaded due to data errors.
   0 Rows not loaded because all WHEN clauses were failed.
   0 Rows not loaded because all fields were null.
@@ -51,12 +50,12 @@ Space allocated for bind array:                 387000 bytes(250 rows)
 Read   buffer bytes: 1048576
 
 Total logical records skipped:          1
-Total logical records read:        100000
+Total logical records read:        120000
 Total logical records rejected:         0
 Total logical records discarded:        0
 
-Run began on Fri Jan 06 16:01:00 2023
-Run ended on Fri Jan 06 16:01:02 2023
+Run began on Tue Jan 10 18:44:00 2023
+Run ended on Tue Jan 10 18:44:03 2023
 
-Elapsed time was:     00:00:01.78
-CPU time was:         00:00:00.36
+Elapsed time was:     00:00:02.75
+CPU time was:         00:00:00.56

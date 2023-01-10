@@ -2,7 +2,7 @@ load data
 infile '../csv/Menu.csv' "str '\r\n'"
 append
 into table MENU
-fields terminated by ';'
+fields terminated by ','
 OPTIONALLY ENCLOSED BY '"' AND '"'
 trailing nullcols
            ( ID,
