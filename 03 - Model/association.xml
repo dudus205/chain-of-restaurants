@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkflowProcess Version="12.2.0.0.1" DBVersion="19.0.0.0.0" Schema="" xmlns="http://xmlns.oracle.com/odmr11">
+    <Nodes>
+        <DataSource Id="10001" Name="PRODUCT" Status="Complete">
+            <Icon XCOORD="105" YCOORD="157"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10001" as (select "PRODUCT"."CATEGORY", 
+"PRODUCT"."ID", 
+"PRODUCT"."NAME" 
+from "PROJEKT"."PRODUCT"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="CATEGORY" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="NAME" DataType="VARCHAR2" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="PRODUCT" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10002" Name="INVOICE" Status="Complete">
+            <Icon XCOORD="66" YCOORD="279"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10002" as (select "INVOICE"."MONTH", 
+"INVOICE"."WEEKDAY", 
+"INVOICE"."QUANTITY", 
+"INVOICE"."HOUR", 
+"INVOICE"."BISTRO_ID", 
+"INVOICE"."POC_ID", 
+"INVOICE"."MENU_ID", 
+"INVOICE"."PRODUCT_ID", 
+"INVOICE"."PRICE_VALUE", 
+"INVOICE"."CLIENT_RATING", 
+"INVOICE"."WORKER_ID", 
+"INVOICE"."DELIVERY_ID", 
+"INVOICE"."BONUS_ID", 
+"INVOICE"."YEAR", 
+"INVOICE"."CLIENT_ID", 
+"INVOICE"."PAYMENT_ID", 
+"INVOICE"."ID", 
+"INVOICE"."CHIEF_ID", 
+"INVOICE"."DAY" 
+from "PROJEKT"."INVOICE"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="MONTH" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="WEEKDAY" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="HOUR" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="BISTRO_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="POC_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="MENU_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRICE_VALUE" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CLIENT_RATING" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="WORKER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="DELIVERY_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="BONUS_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="YEAR" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CLIENT_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PAYMENT_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CHIEF_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="DAY" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="INVOICE" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10011" Name="PAYMENT" Status="Complete">
+            <Icon XCOORD="106" YCOORD="405"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10011" as (select "PAYMENT"."METHOD", 
+"PAYMENT"."TIP", 
+"PAYMENT"."ID", 
+"PAYMENT"."BILL_NUMBER" 
+from "PROJEKT"."PAYMENT"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="METHOD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="TIP" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="BILL_NUMBER" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="PAYMENT" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <Join UseCartesian="false" Id="10003" Name="Join" Status="Complete">
+            <Icon XCOORD="313" YCOORD="280"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10003" as (SELECT 
+"PRODUCT"."CATEGORY"
+, "PRODUCT"."ID"
+, "PRODUCT"."NAME"
+, "INVOICE"."MONTH"
+, "INVOICE"."WEEKDAY"
+, "INVOICE"."QUANTITY"
+, "INVOICE"."HOUR"
+, "INVOICE"."BISTRO_ID"
+, "INVOICE"."POC_ID"
+, "INVOICE"."MENU_ID"
+, "INVOICE"."PRODUCT_ID"
+, "INVOICE"."PRICE_VALUE"
+, "INVOICE"."CLIENT_RATING"
+, "INVOICE"."WORKER_ID"
+, "INVOICE"."DELIVERY_ID"
+, "INVOICE"."BONUS_ID"
+, "INVOICE"."YEAR"
+, "INVOICE"."CLIENT_ID"
+, "INVOICE"."PAYMENT_ID"
+, "INVOICE"."ID" "ID1"
+, "INVOICE"."CHIEF_ID"
+, "INVOICE"."DAY"
+, "PAYMENT"."METHOD"
+, "PAYMENT"."TIP"
+, "PAYMENT"."ID" "ID2"
+, "PAYMENT"."BILL_NUMBER"
+
+FROM
+{INPUT_SOURCE:10001} "PRODUCT"
+INNER JOIN {INPUT_SOURCE:10002} "INVOICE"
+ON "PRODUCT"."ID" = "INVOICE"."PRODUCT_ID"
+INNER JOIN {INPUT_SOURCE:10011} "PAYMENT"
+ON "INVOICE"."PAYMENT_ID" = "PAYMENT"."ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Inner">
+                    <LeftColumn NodeId="10001" NodeName="PRODUCT" Key="Yes" Name="ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10002" NodeName="INVOICE" Key="Yes" Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+                <JoinColumn Type="Inner">
+                    <LeftColumn NodeId="10011" NodeName="PAYMENT" Key="Yes" Name="ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10002" NodeName="INVOICE" Key="Yes" Name="PAYMENT_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="Yes">
+                <RefDBColumn NodeId="10001" NodeName="PRODUCT" Name="CATEGORY" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10001" NodeName="PRODUCT" Name="ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10001" NodeName="PRODUCT" Name="NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="MONTH" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="WEEKDAY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="HOUR" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="BISTRO_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="POC_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="MENU_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="PRICE_VALUE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="CLIENT_RATING" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="WORKER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="DELIVERY_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="BONUS_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="YEAR" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="CLIENT_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="PAYMENT_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="ID" DataType="NUMBER" Status="Valid" Alias="ID1"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="CHIEF_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="INVOICE" Name="DAY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10011" NodeName="PAYMENT" Name="METHOD" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10011" NodeName="PAYMENT" Name="TIP" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10011" NodeName="PAYMENT" Name="ID" DataType="NUMBER" Status="Valid" Alias="ID2"/>
+                <RefDBColumn NodeId="10011" NodeName="PAYMENT" Name="BILL_NUMBER" DataType="NUMBER" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <AssociationBuild MaxDistinctItemValue="10" ASSO_GENERATE_PREPROCESSED_TABLE="false" ASSO_PREPROCESSED_TABLE_NAME="NONE" MaxNumPartitions="1000" ODMS_SAMPLING="false" Id="10009" Name="Assoc Build" Status="Complete">
+            <Icon XCOORD="473" YCOORD="280"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <BuildDataSource SourceId="10003"/>
+            <CaseAttributes>
+                <Attribute Name="BILL_NUMBER" DataType="NUMBER" Status="Valid"/>
+            </CaseAttributes>
+            <MiningAttributes AutoSpec="Yes">
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="BISTRO_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="BONUS_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CATEGORY" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CHIEF_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CLIENT_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CLIENT_RATING" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DAY" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DELIVERY_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="HOUR" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ID1" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="MENU_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="MONTH" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="NAME" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PAYMENT_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="POC_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRICE_VALUE" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="WEEKDAY" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="WORKER_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="YEAR" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="METHOD" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="TIP" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ID2" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="BILL_NUMBER" DataType="NUMBER" Status="Valid"/>
+            </MiningAttributes>
+            <ItemID Name="NAME" DataType="VARCHAR2" Status="Valid"/>
+            <Models>
+                <AprioriModel Id="10008" Name="ASSOC_AP_1_3" Status="Complete" CreationDate="2023-01-11T19:09:11" Annotation="" UseForOutput="true">
+                    <InputMiningData DataUsage="MANUAL" MiningUsage="MANUAL">
+                        <MiningAttributes>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="BISTRO_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="BONUS_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CATEGORY" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CHIEF_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CLIENT_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CLIENT_RATING" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DAY" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DELIVERY_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="HOUR" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ID1" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="MENU_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="MONTH" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="NAME" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PAYMENT_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="POC_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRICE_VALUE" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="QUANTITY" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="WEEKDAY" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="WORKER_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="YEAR" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="METHOD" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="TIP" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ID2" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="BILL_NUMBER" DataType="NUMBER" Status="Valid"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <AprioriAlgo ASSO_FILTERS_ACTIVE="false">
+                        <ASSO_MAX_RULE_LENGTH>4</ASSO_MAX_RULE_LENGTH>
+                        <ASSO_MIN_CONFIDENCE>0.1</ASSO_MIN_CONFIDENCE>
+                        <ASSO_MIN_SUPPORT>0.01</ASSO_MIN_SUPPORT>
+                        <ASSO_MIN_REV_CONFIDENCE>0.0</ASSO_MIN_REV_CONFIDENCE>
+                        <ASSO_MIN_SUPPORT_INT>1</ASSO_MIN_SUPPORT_INT>
+                    </AprioriAlgo>
+                </AprioriModel>
+            </Models>
+        </AssociationBuild>
+    </Nodes>
+    <Links>
+        <Link Id="10004" From="10001" To="10003" Name="Link" Label="From &quot;PRODUCT&quot; to &quot;Join&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10005" From="10002" To="10003" Name="Link" Label="From &quot;INVOICE&quot; to &quot;Join&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10010" From="10003" To="10009" Name="Link" Label="From &quot;Join&quot; to &quot;Assoc Build&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10012" From="10011" To="10003" Name="Link" Label="From &quot;PAYMENT&quot; to &quot;Join&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+    </Links>
+</WorkflowProcess>
