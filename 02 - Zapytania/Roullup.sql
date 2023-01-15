@@ -1,39 +1,70 @@
 --rolloup
 SELECT
-    nvl(bis.name, 'ALL') bistro_name,
-    inv.client_rating,
-    COUNT(inv.id)        invoice_count,
-    SUM(inv.price_value) takings
+    NVL(TO_CHAR(BIS.NAME), 'ALL') AS BISTRO,
+    MONTH,
+    YEAR,
+    TAKINGS
 FROM
-         invoice inv
-    JOIN bistro bis ON bis.id = inv.bistro_id
-GROUP BY
-    rollup(bis.name, inv.client_rating)
-ORDER BY
-    bis.name;
+    BISTRO BIS
+    RIGHT OUTER JOIN (
+        SELECT
+            BISTRO_ID,
+            NVL(TO_CHAR(INV.MONTH), 'ALL') AS "MONTH",
+            NVL(TO_CHAR(INV.YEAR), 'ALL') AS "YEAR",
+            sum(INV.PRICE_VALUE) "TAKINGS"
+        FROM
+            INVOICE INV
+        GROUP BY
+            ROLLUP(INV.YEAR, INV.MONTH, INV.BISTRO_ID)
+    ) MAIN ON MAIN.BISTRO_ID = BIS.ID;
 
 SELECT
-    nvl(bis.name, 'OVERALL RATING') bistro_name,
-    inv.month,
-    ROUND(AVG(INV.client_rating),6) avg_rate
+    NVL(TO_CHAR(BIS.NAME), 'ALL') AS BISTRO,
+    NVL(TO_CHAR(PROD.NAME), 'ALL') AS PRODUCT,
+    YEAR,
+    MONTH,
+    SALES
 FROM
-         invoice inv
-JOIN bistro bis ON bis.id = inv.bistro_id
-GROUP BY
-    rollup(bis.name, inv.month)
-ORDER BY
-    bis.name, inv.month;
+    (
+        SELECT
+            BISTRO_ID,
+            PRODUCT_ID,
+            NVL(TO_CHAR(INV.YEAR), 'ALL') AS YEAR,
+            NVL(TO_CHAR(INV.MONTH), 'ALL') AS MONTH,
+            count (*) AS SALES
+        FROM
+            INVOICE INV
+        group by
+            rollup(INV.BISTRO_ID, INV.PRODUCT_ID, INV.MONTH, INV.YEAR)
+        order by
+            INV.BISTRO_ID ASC,
+            INV.PRODUCT_ID ASC,
+            INV.MONTH ASC,
+            INV.YEAR ASC
+    ) MAIN
+    LEFT OUTER JOIN BISTRO BIS ON BIS.ID = MAIN.BISTRO_ID
+    LEFT OUTER JOIN PRODUCT PROD ON PROD.ID = MAIN.PRODUCT_ID;
 
 SELECT
-    nvl(bis.name, 'OVERALL') bistro_name,
-    nvl(poc.type, 'OVERALL TYPE') TYPE,
-    count(poc.type)
+    NVL(TO_CHAR(BIS.NAME), 'ALL') AS BISTRO,
+    NVL(TO_CHAR(MEN.NAME), 'ALL') AS MENU,
+    WEEKDAY,
+    "SALES COUNT"
 FROM
-         invoice inv
-JOIN bistro bis ON bis.id = inv.bistro_id
-JOIN place_of_consumption poc ON poc.id = inv.poc_id
-GROUP BY
-    rollup(bis.name, poc.type)
-ORDER BY
-    bis.name, poc.type
-;
+    (
+        SELECT
+            BISTRO_ID,
+            NVL(TO_CHAR(INV.WEEKDAY), 'ALL') AS WEEKDAY,
+            MENU_ID,
+            count (*) AS "SALES COUNT"
+        FROM
+            INVOICE INV
+        group by
+            rollup(S.BISTRO_ID, INV.WEEKDAY, INV.MENU_ID)
+        order by
+            INV.BISTRO_ID ASC,
+            INV.WEEKDAY ASC,
+            INV.MENU_ID ASC
+    ) MAIN
+    LEFT OUTER JOIN BISTRO BIS ON B.ID = MAIN.BISTRO_ID
+    LEFT OUTER JOIN MENU MEN ON MMEN.ID = MAIN.MENU_ID;
