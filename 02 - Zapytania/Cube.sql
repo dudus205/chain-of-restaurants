@@ -1,43 +1,68 @@
 --cube
 SELECT
-    nvl(bis.name, 'ALL') bistro_name,
-    COUNT(inv.id)        invoice_count,
-    SUM(inv.price_value) takings
+    NVL(TO_CHAR(BIS.NAME), 'FOR ALL') "BISTRO",
+    NVL(TO_CHAR(PROD.NAME), 'FOR ALL') "PRODUCT",
+    "SALES COUNT",
+    TAKINGS
 FROM
-         invoice inv
-    JOIN bistro bis ON bis.id = inv.bistro_id
-GROUP BY
-    CUBE(bis.name)
-ORDER BY
-    bis.name;
--- nazwa bistro, liczba faktur, ile zarobia 
+    (
+        SELECT
+            BISTRO_ID,
+            PRODUCT_ID,
+            count(*) AS "SALES COUNT",
+            sum(PRICE_VALUE) AS TAKINGS
+        FROM
+            INVOICE INV
+        GROUP BY
+            cube (INV.BISTRO_ID, INV.PRODUCT_ID)
+        order by
+            INV.BISTRO_ID,
+            INV.PRODUCT_ID
+    ) MAIN 
+	JOIN BISTRO BIS ON MAIN.BISTRO_ID = BIS.ID
+    LEFT OUTER JOIN PRODUCT PROD ON MAIN.PRODUCT_ID = PROD.ID;
 
 SELECT
-    nvl(bis.name, 'OVERALL RATING') bistro_name,
-    MIN(cli.age) min_age,
-    MAX(cli.age) max_age,
-    ROUND(AVG(cli.age),1) avg_age,
-    ROUND(AVG(INV.client_rating),6) avg_rate
+    NVL(TO_CHAR(BON.NAME), 'ALL') AS BONUS,
+    NVL(TO_CHAR(BIS.NAME), 'ALL') AS BISTRO,
+    "SALES COUNT"
 FROM
-         invoice inv
-JOIN bistro bis ON bis.id = inv.bistro_id
-JOIN client cli on cli.id = inv.client_id
-GROUP BY
-    CUBE(bis.name)
-ORDER BY
-    bis.name;
---nazwa bistro, minimalny, maksymalny i średni wiek, średnia ocena
+    (
+        SELECT
+            BONUS_ID,
+            BISTRO_ID,
+            COUNT(*) AS "SALES COUNT"
+        FROM
+            INVOICE INV
+        GROUP BY
+            CUBE (INV.BONUS_ID, INV.BISTRO_ID)
+        ORDER BY
+            INV.BONUS_ID ASC,
+            INV.BISTRO_ID ASC
+    ) MAIN 
+	JOIN BONUS BON ON BON.ID = MAIN.BONUS_ID
+    LEFT OUTER JOIN BISTRO BIS ON MAIN.BISTRO_ID = BIS.ID;
 
 SELECT
-    nvl(bis.name, 'OVERALL') bistro_name,
-    nvl(poc.type, 'OVERALL TYPE') TYPE,
-    count(poc.type)
+    NVL(TO_CHAR(MEN.NAME), 'ALL') AS MENU,
+    NVL(TO_CHAR(BIS.NAME), 'ALL') AS BISTRO,
+    NVL(TO_CHAR(MAIN.CLIENT_RATING), 'ALL') as RATING,
+    SALES_COUNT AS "SALES COUNT"
 FROM
-         invoice inv
-JOIN bistro bis ON bis.id = inv.bistro_id
-JOIN place_of_consumption poc ON poc.id = inv.poc_id
-GROUP BY
-    CUBE(bis.name, poc.type)
-ORDER BY
-    bis.name, poc.type
-;
+    (
+        SELECT
+            CLIENT_RATING,
+            MENU_ID,
+            BISTRO_ID,
+            COUNT (*) SALES_COUNT
+        FROM
+            INVOICE INV
+        GROUP BY
+            cube (INV.MENU_ID, INV.CLIENT_RATING, INV.BISTRO_ID)
+        ORDER BY
+            INV.CLIENT_RATING ASC,
+            INV.CLIENT_RATING ASC,
+            INV.BISTRO_ID ASC
+    ) MAIN 
+	JOIN BIS ON MAIN.MENU_ID = MEN.ID
+    LEFT OUTER JOIN BISTRO BI ON MEN.BISTRO_ID = BIS.ID;
